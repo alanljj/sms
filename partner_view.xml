@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="partner_sms_form_view">
+			<field name="name">Parnter form</field>
+			<field name="model">partner.sms</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Partner Sms">
+					<separator colspan='4' string='Are you sure to send message ?'/>	
+					<group>
+						<field name="message"/>
+					</group>
+					<footer>
+						<button name="btn_ok" string="OK" type="object" class="oe_highlight" context="{'messgae':message}"/>
+						or
+						<button string="cancel" special="cancel" class="oe_link"/>
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_partner_sms">
+			<field name="name">Partner Sms</field>
+			<field name="res_model">partner.sms</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="partner_sms_form_view"/>
+			<field name="target">new</field>
+		</record>
+
+		<record model="ir.values" id="values_partner_sms">
+			<field name="model_id" ref="base.model_res_partner"/>
+			<field name="name">Multi Message</field>
+			<field name="key2">client_action_multi</field>
+			<field name="value" eval="'ir.actions.act_window,'+str(ref('action_partner_sms'))"/>
+			<field name="key">action</field>
+			<field name="model">res.partner</field>
+		</record>
+	</data>
+</openerp>

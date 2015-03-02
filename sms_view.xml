@@ -1,0 +1,100 @@
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="sms_form_view">
+			<field name="name">Sms form view</field>
+			<field name="model">sms.message</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Message">
+					<header>
+						<field name="state" widget="statusbar"/>
+					</header>
+					<sheet>
+						<group>
+							<field name="partner"/>
+							<field name="mobile"/>
+							<field name="message"/>
+							<field name="err_msg"/>
+						</group>
+						<footer>
+							<button name="btn_send" string="Send" type="object" class="oe_highlight" />
+							or
+							<button string="cancel" special="cancel" class="oe_link"/>
+						</footer>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="sms_tree_view">
+			<field name="name">Sms Tree view</field>
+			<field name="model">sms.message</field>
+			<field name="arch" type="xml">
+				<tree string="Message">
+					<field name="partner"/>
+					<field name="mobile"/>
+					<field name="message"/>
+				</tree>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="actions_sms">
+			<field name="name">Send Sms</field>
+			<field name="res_model">sms.message</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+
+		<menuitem name="sms" id="sms" parent="base.menu_email" action="actions_sms"/>
+
+		<record model="ir.ui.view" id="sms_config_form_view">
+			<field name="name">Sms config view</field>
+			<field name="model">sms.config.settings</field>
+			<field name="type">form</field>
+			<field name="arch" type="xml">
+				<form string="Sms Config" class="oe_form_configuration">
+					<header>
+						<button string="Apply" type="object" name="execute" class="oe_highlight"/>
+						or
+						<button string="Cancel" type="object" name="cancel" class="oe_link" />
+					</header>
+					<separator string="Message Configure" />   
+					<group>
+						<label for="id" string="Messages Configuration"/>
+						<div>
+							<div>
+								<label for="user_id" string="User ID"/>
+								<field name="user_id"/>
+							</div>
+							<div>
+								<label for="send_address" string="Interface Address"/>
+								<field name="send_address"/>
+							</div>
+							<div>
+								<label for="user_name" string="Account"/>
+								<field name="user_name"/>
+							</div>
+							<div>
+								<label for="pass_word" string="Password"/>
+								<field name="pass_word" password="1"/>
+							</div>
+							<div>
+								<label for="appendix" string="Appendix"/>
+								<field name="appendix"/>
+							</div>
+						</div>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.actions.act_window" id="action_sms_config">
+			<field name="name">Action Sms config</field>
+			<field name="res_model">sms.config.settings</field>
+			<field name="view_mode">form</field>
+			<field name="target">inline</field>
+		</record>
+		
+		<menuitem id="sms_config_settings" name="Sms Settings" parent="base.menu_config" action="action_sms_config"/>
+
+	</data>
+</openerp>

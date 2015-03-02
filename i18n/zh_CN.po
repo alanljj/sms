@@ -1,0 +1,208 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sms
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-03-02 07:57+0000\n"
+"PO-Revision-Date: 2015-03-02 16:03+0800\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+#: field:sms.config.settings,user_name:0
+msgid "Account"
+msgstr "用户名"
+
+#. module: sms
+#: model:ir.actions.act_window,name:sms.action_sms_config
+msgid "Action Sms config"
+msgstr "Action Sms config"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+msgid "Appendix"
+msgstr "后缀"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+msgid "Apply"
+msgstr "应用"
+
+#. module: sms
+#: view:partner.sms:sms.partner_sms_form_view
+msgid "Are you sure to send message ?"
+msgstr "你确定要群发短信吗？"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+msgid "Cancel"
+msgstr "取消"
+
+#. module: sms
+#: field:partner.sms,create_uid:0 field:sms.config.settings,create_uid:0
+#: field:sms.message,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: sms
+#: field:partner.sms,create_date:0 field:sms.config.settings,create_date:0
+#: field:sms.message,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: sms
+#: selection:sms.message,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: sms
+#: field:sms.config.settings,appendix:0
+msgid "End Text"
+msgstr "End Text"
+
+#. module: sms
+#: field:sms.message,err_msg:0
+msgid "Err Msg"
+msgstr "错误信息"
+
+#. module: sms
+#: selection:sms.message,state:0
+msgid "Failed"
+msgstr "失败"
+
+#. module: sms
+#: field:partner.sms,id:0 field:sms.config.settings,id:0
+#: field:sms.message,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+#: field:sms.config.settings,send_address:0
+msgid "Interface Address"
+msgstr "接口地址"
+
+#. module: sms
+#: field:partner.sms,write_uid:0 field:sms.config.settings,write_uid:0
+#: field:sms.message,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: sms
+#: field:partner.sms,write_date:0 field:sms.config.settings,write_date:0
+#: field:sms.message,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: sms
+#: field:partner.sms,message:0 view:sms.message:sms.sms_form_view
+#: view:sms.message:sms.sms_tree_view field:sms.message,message:0
+msgid "Message"
+msgstr "消息内容"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+msgid "Message Configure"
+msgstr "短信设置"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+msgid "Messages Configuration"
+msgstr "短信设置"
+
+#. module: sms
+#: field:sms.message,mobile:0
+msgid "Mobile"
+msgstr "手机"
+
+#. module: sms
+#: field:sms.message,partner:0
+msgid "Partner"
+msgstr "合作伙伴"
+
+#. module: sms
+#: model:ir.actions.act_window,name:sms.action_partner_sms
+#: view:partner.sms:sms.partner_sms_form_view
+msgid "Partner Sms"
+msgstr "群发短信"
+
+#. module: sms
+#: code:addons/sms/partner.py:37
+#, python-format
+msgid "Partner has no mobile!"
+msgstr "合作伙伴没有手机号！"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+#: field:sms.config.settings,pass_word:0
+msgid "Password"
+msgstr "密码"
+
+#. module: sms
+#: view:sms.message:sms.sms_form_view
+msgid "Send"
+msgstr "发送"
+
+#. module: sms
+#: model:ir.actions.act_window,name:sms.actions_sms
+msgid "Send Sms"
+msgstr "发送短信"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+msgid "Sms Config"
+msgstr "短信设置"
+
+#. module: sms
+#: model:ir.ui.menu,name:sms.sms_config_settings
+msgid "Sms Settings"
+msgstr "短信设置"
+
+#. module: sms
+#: field:sms.message,state:0
+msgid "States"
+msgstr "状态"
+
+#. module: sms
+#: selection:sms.message,state:0
+msgid "Success"
+msgstr "成功"
+
+#. module: sms
+#: view:sms.config.settings:sms.sms_config_form_view
+#: field:sms.config.settings,user_id:0
+msgid "User ID"
+msgstr "User ID"
+
+#. module: sms
+#: view:partner.sms:sms.partner_sms_form_view
+#: view:sms.message:sms.sms_form_view
+msgid "cancel"
+msgstr "取消"
+
+#. module: sms
+#: view:partner.sms:sms.partner_sms_form_view
+#: view:sms.config.settings:sms.sms_config_form_view
+#: view:sms.message:sms.sms_form_view
+msgid "or"
+msgstr "或"
+
+#. module: sms
+#: model:ir.ui.menu,name:sms.sms
+msgid "sms"
+msgstr "短信"
+
+#. module: sms
+#: code:addons/sms/sms.py:43
+#, python-format
+msgid "the partner has no mobile!"
+msgstr "合作伙伴没有手机！"
