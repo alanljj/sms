@@ -38,4 +38,4 @@ class partner(models.Model):
                             raise except_orm(_('Warning!'),_('Partner has no mobile!'))
 			sms = sms_obj.create({'partner':partner.id,'mobile':partner.mobile,'message':self.message})
 			if sms:
-				sms.btn_send()
+				sms.send_recycle_sms("1","1")

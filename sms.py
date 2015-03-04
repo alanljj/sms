@@ -21,7 +21,11 @@
 
 from openerp import api,_,models,fields
 from xml.etree import ElementTree
+from openerp.exceptions import except_orm
 import httplib,urllib
+import cookielib
+from datetime import datetime,timedelta
+
 
 class sms_message(models.Model):
 	_name='sms.message'
@@ -29,6 +33,7 @@ class sms_message(models.Model):
 	partner = fields.Many2one('res.partner','Partner',required=True)
 	mobile = fields.Char('Mobile')
 	message = fields.Text('Message',required=True)
+        send_time = fields.Datetime('Send Time')
 	state = fields.Selection([('draft','Draft'),('success','Success'),('failed','Failed')],'States')
         err_msg = fields.Char('Err Msg')
 
@@ -40,8 +45,9 @@ class sms_message(models.Model):
         def btn_send(self):
             #check if the partner's mobile is empty!
             if not self.partner.mobile:
-                raise ValueError(_('the partner has no mobile!'))
-            res = self.send_sms(self.mobile,self.message)
+				raise except_orm(_('Warning!'),_('the partner has no mobile!'))
+            s_time = datetime.strptime(self.send_time,'%Y-%m-%d %H:%M:%S')+timedelta(hours=8)
+            res = self.send_sms(self.mobile,self.message,s_time)
             if res['status']=="Success":
                 self.state = "success"
             else:
@@ -49,7 +55,7 @@ class sms_message(models.Model):
                 self.err_msg = res['message']
 
         @api.multi
-        def send_sms(self,mobile,content):
+        def send_sms(self,mobile,content,send_time):
             #get settings
             config_obj = self.env['ir.config_parameter']
             user_id = config_obj.get_param('sms.config.userid')
@@ -68,11 +74,10 @@ class sms_message(models.Model):
 		    "password":password,
 		    "mobile":mobile,
 		    "content":content+appendix,
-		    "sendTime":'',
+                    "sendTime":send_time,
 		    "extno":'',
 	        })
 	    
-                print params
 	        address = send_address.split(':')
 	        port = len(address)>1 and address[1] or 80
 
@@ -95,7 +100,6 @@ class sms_message(models.Model):
 	    finally:
 	        if httpclient:
 		    httpclient.close() 
-            print res
 	    return res
 
 

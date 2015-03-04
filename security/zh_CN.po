@@ -40,7 +40,7 @@ msgstr "应用"
 #. module: sms
 #: view:partner.sms:sms.partner_sms_form_view
 msgid "Are you sure to send message ?"
-msgstr "你确定要群发短信吗？"
+msgstr "你确定要给所选合作伙伴发短信吗？"
 
 #. module: sms
 #: view:sms.config.settings:sms.sms_config_form_view
@@ -133,7 +133,7 @@ msgstr "合作伙伴"
 #: model:ir.actions.act_window,name:sms.action_partner_sms
 #: view:partner.sms:sms.partner_sms_form_view
 msgid "Partner Sms"
-msgstr "群发短信"
+msgstr "发送短信"
 
 #. module: sms
 #: code:addons/sms/partner.py:37
@@ -165,7 +165,7 @@ msgstr "短信设置"
 #. module: sms
 #: model:res.groups,name:sms.group_sms
 msgid "Sms Sending"
-msgstr "群发短信"
+msgstr "给合作伙伴发短信"
 
 #. module: sms
 #: model:ir.ui.menu,name:sms.sms_config_settings
